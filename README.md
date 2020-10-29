@@ -103,7 +103,7 @@ Installer notebook ipykernel avec conda
 
 Pour connaitre le contenu des package install
 
-````cmd
+```cmd
 (py27) D:\PROGRAMMING\QUANTUM\QUANTUM\First_projet>conda list --name base conda
 
 # packages in environment at C:\Users\admin\anaconda3:
@@ -139,7 +139,7 @@ jupyter notebook
 ## Mise a jour de l'environnement
 
 
-````cmd
+```cmd
 conda update --all
 conda update anaconda
 
