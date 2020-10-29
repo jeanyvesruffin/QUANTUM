@@ -147,20 +147,48 @@ conda update anaconda
 
 ## Demo: exploration de l'interface notebook et execution de notre code 
 
-1 .Apres avoir ouvert votre IDE Jupyter, cliquer sur new Python 2.
-2 .Nommer ce fichier ex: ComprendreJupyter
-3 .Cliquer sur le bouton "+" pour ajouter autant de ligne de code que vous voulez y inserer (ou ESC+A)
-4 .Pour supprimer des lignes selectionner la et cliquer sur le ciseaux (ESC+DD)
-5 .Exemple de code:
+1 . Apres avoir ouvert votre IDE Jupyter, cliquer sur new Python 2.
+
+2 . Nommer ce fichier ex: ComprendreJupyter
+
+3 . Cliquer sur le bouton "+" pour ajouter autant de ligne de code que vous voulez y inserer (ou ESC+A)
+
+4 . Pour supprimer des lignes selectionner la et cliquer sur le ciseaux (ESC+DD)
+
+5 . Exemple de code:
 	
 	* Creation d'un input qui retourne lui-meme
 	
-	```ipynb
+```ipynb
+raw_input("Enter your name: \n")
+```
+
+
+```ipynb
+raw_input("Enter your name: \n")
+Entrez votre nom: 
+ruffin
+'ruffin'
+```
+
+	* Creation d'une comparaison de deux nombres retourne 1 si le premier chiffre est superieur au second retourne -1 dans le cas contraire.
 	
-	```
-
-
-
+```ipybn
+cmp(1,0)
+1
+cmd(0,1)
+-1
+```
+	
+	* Creation boucle for
+	
+```ipybn
+for x in xrange(1,5) : print x
+1
+2
+3
+4
+```
 
 
 ## Issu
