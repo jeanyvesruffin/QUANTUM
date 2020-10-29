@@ -56,10 +56,11 @@ Quitter python
 CTRL+Z
 ```
 
-Exemple pour installer environnement python 2.7
+Exemple pour installer environnement python 2.7 sur un nouveau projet (application) se nommant firstApp_py27
 
 ```cmd
 (base) D:\PROGRAMMING\QUANTUM\QUANTUM\First_projet>conda create -n py27 python=2.7
+
 Collecting package metadata (current_repodata.json): done
 Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
 Collecting package metadata (repodata.json): done
@@ -92,19 +93,13 @@ conda activate py27
 Installer notebook ipykernel avec conda
 
 ```cmd
+(py27) D:\PROGRAMMING\QUANTUM\QUANTUM\First_projet>conda install -c conda-forge jupyterlab
 (py27) D:\PROGRAMMING\QUANTUM\QUANTUM\First_projet>conda install notebook ipykernel
 
 
 ```
 
-Autre methode, permet de mettre a jour votre environnement
 
-
-```cmd
-
-conda update --name base conda
-
-```
 
 Pour connaitre le contenu des package install
 
@@ -126,7 +121,62 @@ conda-verify              3.4.2                      py_1
 msys2-conda-epoch         20160418                      1
 ```
 
+Pour installer manuellement python3 kernel pour tous les utilisateurs de Jupyter notebook executer la commande suivanet:
+
+```cmd
+(base) D:\PROGRAMMING\QUANTUM\QUANTUM\First_projet>ipython kernel install --user
+Installed kernelspec python3 in C:\Users\admin\AppData\Roaming\jupyter\kernels\python3
+
+```
+
+Maintenant qu'Anaconda est configure vous pouvez le desactiver et activer jupyter notebook
+
+```cmd
+jupyter notebook
+
+```
+
+## Mise a jour de l'environnement
+
+
+````cmd
+conda update --all
+conda update anaconda
+
+```
+
+## Demo: exploration de l'interface notebook et execution de notre code 
+
+1 . Apres avoir ouvert votre IDE Jupyter, cliquer sur new Python 2.
+2 . Nommer ce fichier ex: ComprendreJupyter
+3 . Cliquer sur le bouton "+" pour ajouter autant de ligne de code que vous voulez y inserer (ou ESC+A)
+4 . Pour supprimer des lignes selectionner la et cliquer sur le ciseaux (ESC+DD)
+5 . Exemple de code:
+	
+	* Creation d'un input qui retourne lui-meme
+	
+	```ipynb
+	
+	```
 
 
 
 
+
+## Issu
+
+[ERROR conda.core.link:_execute(698): ipykernel](https://www.heathmills.net/anaconda-upgrade-issues/)
+
+[ipython kernel install --user LookupError: unknown encoding: cp65001](https://github.com/conda/conda/issues/5448)
+
+
+```cmd
+set PYTHONIOENCODING=UTF-8
+
+```
+
+ImportError: no module named win32api
+
+```cmd
+pip install pypiwin32
+```
