@@ -147,11 +147,11 @@ conda update anaconda
 
 ## Demo: exploration de l'interface notebook et execution de notre code 
 
-1. Apres avoir ouvert votre IDE Jupyter, cliquer sur new Python 2.
-2. Nommer ce fichier ex: ComprendreJupyter
-3. Cliquer sur le bouton "+" pour ajouter autant de ligne de code que vous voulez y inserer (ou ESC+A)
-4. Pour supprimer des lignes selectionner la et cliquer sur le ciseaux (ESC+DD)
-5. Exemple de code:
+1 .Apres avoir ouvert votre IDE Jupyter, cliquer sur new Python 2.
+2 .Nommer ce fichier ex: ComprendreJupyter
+3 .Cliquer sur le bouton "+" pour ajouter autant de ligne de code que vous voulez y inserer (ou ESC+A)
+4 .Pour supprimer des lignes selectionner la et cliquer sur le ciseaux (ESC+DD)
+5 .Exemple de code:
 	
 	* Creation d'un input qui retourne lui-meme
 	
