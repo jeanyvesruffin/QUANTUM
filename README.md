@@ -423,9 +423,7 @@ def show_articles_more_than(column='sepal_length', x=5):
 
 # Conflits et visualisation donnees
 
-## Controle forme des datas (shape)
-
-### shape
+## shape
 
 Represente le nombre de ligne et de colonne de notre fichier CSV
 
@@ -435,7 +433,7 @@ iris.shape
 # (150, 5)
 ```
 
-### describe()
+## describe()
 
 ```ipybn
 iris.describe()
@@ -443,20 +441,46 @@ iris.describe()
 ![description](describe.bmp)
 
 
-### Controle si donnees vides ou nulls
+## Controle si donnees vides ou nulls
+
 
 ```ipybn
 iris.isnull().sum()
 ```
 ![isNull](isNull.bmp)
 
-### Verification des doublons
+## Verification des doublons
+
+Ici il n'ya a pas de doublon dans l'entete:
 
 ```ipybn
 iris.duplicated().head()
 ```
 ![doublon](doublon.bmp)
 
+Permet de savoir s'il existe des lignes en doublon:
+
+```ipybn
+iris.duplicated().sum()
+```
+
+Supprimer les lignes en doublons:
+
+
+```ipybn
+iris.drop_duplicates(keep=False, inplace=True)
+```
+
+## Visualisatiopn des donnees
+
+```ipybn
+plt.figure(figsize = (8,6))
+plt.hist(iris['sepal_length'], bins =20, color ="g")
+plt.xlabel("Sepal_length")
+plt.ylabel("Count")
+```
+
+![graf](graph.bmp)
 
 # Issu
 
