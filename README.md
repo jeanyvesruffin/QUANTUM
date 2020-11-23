@@ -418,7 +418,7 @@ def show_articles_more_than(column='sepal_length', x=5):
     return iris.loc[iris[column] > x]
 ```
 
-![petales](widgets.bmp)
+![petales](widget.bmp)
 
 
 # Issu
