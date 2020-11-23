@@ -185,6 +185,100 @@ for x in xrange(1,5) : print x
 4
 ```
 
+## Demo: ligne de commande "magic"
+
+* Python version
+
+```ipybn
+!python -- version
+# Python 3.8.5
+```
+
+* Print Working Directory (pwd on linux)
+
+```ipybn
+!cd
+# C:\Users\admin
+```
+
+* Print Directory (ls on linux)
+
+```ipybn
+!dir
+# ...
+```
+
+* Installation package avec pip ex: matplotlib
+
+```ipybn
+!pip install matplotlib
+
+
+# Requirement already satisfied: matplotlib in c:\users\admin\anaconda3\lib\site-packages (3.3.2)
+...
+```
+
+* Utilisation (import) package
+
+```ipybn
+import matplotlib as plt
+plt.__version__
+
+# '3.3.2'
+```
+
+* Installation package avec pip ex: numpy
+
+```ipybn
+!pip install numpy
+
+# Requirement already satisfied: numpy in c:\users\admin\anaconda3\lib\site-packages (1.19.2)
+```
+
+* Utilisation de markdown
+
+Selectionner dans le menu deroulant Code et selectionner MarkDown
+
+* Liste des commandes "magics"
+
+```ipybn
+%lsmagic
+
+# Available line magics:
+%alias  %alias_magic  %autoawait  %autocall  %automagic  %autosave  %bookmark  %cd  %clear  %cls  %colors  %conda  %config  %connect_info  %copy  %ddir  %debug  %dhist  %dirs  %doctest_mode  %echo  %ed  %edit  %env  %gui  %hist  %history  %killbgscripts  %ldir  %less  %load  %load_ext  %loadpy  %logoff  %logon  %logstart  %logstate  %logstop  %ls  %lsmagic  %macro  %magic  %matplotlib  %mkdir  %more  %notebook  %page  %pastebin  %pdb  %pdef  %pdoc  %pfile  %pinfo  %pinfo2  %pip  %popd  %pprint  %precision  %prun  %psearch  %psource  %pushd  %pwd  %pycat  %pylab  %qtconsole  %quickref  %recall  %rehashx  %reload_ext  %ren  %rep  %rerun  %reset  %reset_selective  %rmdir  %run  %save  %sc  %set_env  %store  %sx  %system  %tb  %time  %timeit  %unalias  %unload_ext  %who  %who_ls  %whos  %xdel  %xmode
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%cmd  %%debug  %%file  %%html  %%javascript  %%js  %%latex  %%markdown  %%perl  %%prun  %%pypy  %%python  %%python2  %%python3  %%ruby  %%script  %%sh  %%svg  %%sx  %%system  %%time  %%timeit  %%writefile
+
+Automagic is ON, % prefix IS NOT needed for line magics.
+```
+
+* Execution script python
+
+Exemple myscript.py, fonction qui retourne le carre d'un nombre de 1 a 4.
+
+```py
+def square(x):
+	return x ** 2
+for i in range(1,4):
+		print("Le carre de %s is"%i, square(i))
+
+```
+
+Puis dans Jupyter notebook tapper et executer la ligne suivante:
+
+```ipybn
+%run myscript.py
+# Le carre de 1 is 1
+# Le carre de 2 is 4
+# Le carre de 3 is 9
+```
+
+Autre exemple: affichage d'une courbe sinusoidale.
+
+
+![sinus](sinus.bmp)
+
 
 ## Issu
 
