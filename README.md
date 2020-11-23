@@ -377,6 +377,36 @@ JUPYTER
 </font>
 ```
 
+# Travail en interaction avec les widgets
+
+## Installation des widgets
+
+```ipybn
+!pip install ipywidgets
+```
+
+## Importation des bibliotheques
+
+```ipybn
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import ipywidgets as widgets
+from ipywidgets import interact, interact_manual
+```
+
+## Utiliser un fichier CSV
+
+Apres avoir copier/coller votre fichier .CSV dans votre noteBook et importer les bibliotheque ci-dessus
+
+
+```ipybn
+iris=pd.read_csv('IRIS.CSV')
+iris.head()
+```
+
+![csv](csv.bmp)
 
 # Issu
 
