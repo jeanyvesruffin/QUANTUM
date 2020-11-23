@@ -405,8 +405,21 @@ Apres avoir copier/coller votre fichier .CSV dans votre noteBook et importer les
 iris=pd.read_csv('IRIS.CSV')
 iris.head()
 ```
-
 ![csv](csv.bmp)
+
+## Interaction avec le fichier .CSV
+
+Exemplle: retourne toutes les fleurs qui ont plus de 5 petales.
+
+
+```ipybn
+@interact
+def show_articles_more_than(column='sepal_length', x=5):
+    return iris.loc[iris[column] > x]
+```
+
+![petales](petales.bmp)
+
 
 # Issu
 
