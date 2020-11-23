@@ -1,6 +1,6 @@
 # QUANTUM with IBM
 
-## Environnement de travail
+# Environnement de travail
 
 
 Telecharger:
@@ -30,7 +30,7 @@ Une fois le serveur virtuel demarre, nous pouvons y ajouter python3 comme notebo
 ex: http://localhost:8888/tree
 
 
-## Configuration du projet
+# Configuration du projet
 
 Version python utilise
 
@@ -136,7 +136,7 @@ jupyter notebook
 
 ```
 
-## Mise a jour de l'environnement
+# Mise a jour de l'environnement
 
 
 ```cmd
@@ -144,7 +144,7 @@ conda update --all
 conda update anaconda
 ```
 
-## Demo: exploration de l'interface notebook et execution de notre code 
+# Demo: exploration de l'interface notebook et execution de notre code 
 
 1 . Apres avoir ouvert votre IDE Jupyter, cliquer sur new Python 2.
 
@@ -166,7 +166,7 @@ ruffin
 'ruffin'
 ```
 
-* Creation d'une comparaison de deux nombres retourne 1 si le premier chiffre est superieur au second retourne -1 dans le cas contraire.
+## Creation d'une comparaison de deux nombres retourne 1 si le premier chiffre est superieur au second retourne -1 dans le cas contraire.
 	
 ```ipybn
 cmp(1,0)
@@ -175,7 +175,7 @@ cmd(0,1)
 -1
 ```
 	
-* Creation boucle for
+## Creation boucle for
 	
 ```ipybn
 for x in xrange(1,5) : print x
@@ -185,30 +185,30 @@ for x in xrange(1,5) : print x
 4
 ```
 
-## Demo: ligne de commande "magic"
+# Demo: ligne de commande "magic"
 
-* Python version
+## Python version
 
 ```ipybn
 !python -- version
 # Python 3.8.5
 ```
 
-* Print Working Directory (pwd on linux)
+## Print Working Directory (pwd on linux)
 
 ```ipybn
 !cd
 # C:\Users\admin
 ```
 
-* Print Directory (ls on linux)
+## Print Directory (ls on linux)
 
 ```ipybn
 !dir
 # ...
 ```
 
-* Installation package avec pip ex: matplotlib
+## Installation package avec pip ex: matplotlib
 
 ```ipybn
 !pip install matplotlib
@@ -218,7 +218,7 @@ for x in xrange(1,5) : print x
 ...
 ```
 
-* Utilisation (import) package
+## Utilisation (import) package
 
 ```ipybn
 import matplotlib as plt
@@ -227,7 +227,7 @@ plt.__version__
 # '3.3.2'
 ```
 
-* Installation package avec pip ex: numpy
+## Installation package avec pip ex: numpy
 
 ```ipybn
 !pip install numpy
@@ -235,11 +235,11 @@ plt.__version__
 # Requirement already satisfied: numpy in c:\users\admin\anaconda3\lib\site-packages (1.19.2)
 ```
 
-* Utilisation de markdown
+## Utilisation de markdown
 
 Selectionner dans le menu deroulant Code et selectionner MarkDown
 
-* Liste des commandes "magics"
+## Liste des commandes "magics"
 
 ```ipybn
 %lsmagic
@@ -253,7 +253,7 @@ Available cell magics:
 Automagic is ON, % prefix IS NOT needed for line magics.
 ```
 
-* Execution script python
+## Execution script python
 
 Exemple myscript.py, fonction qui retourne le carre d'un nombre de 1 a 4.
 
@@ -280,7 +280,105 @@ Autre exemple: affichage d'une courbe sinusoidale.
 ![sinus](sinus.bmp)
 
 
-## Issu
+Ou alors appeler le
+
+```ipybn
+%run JupyterNotebookTest/sin_curve.ipynb
+# Graphique
+```
+
+# Magics command lines et cellules
+
+## Sauvegarder une variable
+
+Exemple
+
+```ipybn
+my_string='Je vais sauvegarder ma variable'
+%store my_string
+```
+
+## Supprimer une variable
+
+Exemple
+
+```ipybn
+my_string='Je vais sauvegarder ma variable'
+del my_string
+```
+
+## Rappeler une variable dans un autre notebook meme si celle-ci a ete supprime
+
+```ipybn
+%store -r string
+print(string)
+# Mon string
+```
+
+## Affichage du contenu d'un programm py
+
+```ipybn
+%load JupyterNotebookTest/myscript.py
+
+def square(x):
+	return x ** 2
+	
+for i in range(1,4):
+		print("Le carre de %s is"%i, square(i))
+```
+
+*Suivi de shift+enter l'execution du py se fais*
+
+
+## Commande magique pour definir le format (ex: Markdown)
+
+```ipybn
+%%markdown
+Ceci est un paragraphe markdown
+```
+
+## Commande magic **%%time**
+
+```ipybn
+%%time
+
+import time
+for i in range(1000):
+        time.sleep(0.01)
+# Wall time: 15.7 s
+```
+
+## Commande magic **%%timeit**
+
+```ipybn
+%%timeit
+list_num=[n ** 2 for n in range(1000)]
+# 180 µs ± 2.3 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+```
+
+## Creation d'un nouveau fichier en commande magic **%%writefile**
+
+```ipybn
+%%writefile JupyterNotebookTest/newfile.py
+print('Hi')
+# Writing JupyterNotebookTest/newfile.py
+# Verification
+%load JupyterNotebookTest/newfile.py
+# %load JupyterNotebookTest/newfile.py
+# print('Hi')
+```
+
+## Creation de **%%html**
+
+```ipybn
+%%html
+<font size = 6 color = 'red'>
+JUPYTER
+</font>
+```
+
+
+# Issu
 
 [ERROR conda.core.link:_execute(698): ipykernel](https://www.heathmills.net/anaconda-upgrade-issues/)
 
