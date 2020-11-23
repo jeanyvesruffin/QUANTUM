@@ -421,6 +421,43 @@ def show_articles_more_than(column='sepal_length', x=5):
 ![petales](widget.bmp)
 
 
+# Conflits et visualisation donnees
+
+## Controle forme des datas (shape)
+
+### shape
+
+Represente le nombre de ligne et de colonne de notre fichier CSV
+
+
+```ipybn
+iris.shape
+# (150, 5)
+```
+
+### describe()
+
+```ipybn
+iris.describe()
+```
+![description](describe.bmp)
+
+
+### Controle si donnees vides ou nulls
+
+```ipybn
+iris.isnull().sum()
+```
+![isNull](isNull.bmp)
+
+### Verification des doublons
+
+```ipybn
+iris.duplicated().head()
+```
+![doublon](doublon.bmp)
+
+
 # Issu
 
 [ERROR conda.core.link:_execute(698): ipykernel](https://www.heathmills.net/anaconda-upgrade-issues/)
