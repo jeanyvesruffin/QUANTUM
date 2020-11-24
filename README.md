@@ -473,6 +473,8 @@ iris.drop_duplicates(keep=False, inplace=True)
 
 ## Visualisatiopn des donnees
 
+* Graphique en barre
+
 ```ipybn
 plt.figure(figsize = (8,6))
 plt.hist(iris['sepal_length'], bins =20, color ="g")
@@ -481,6 +483,29 @@ plt.ylabel("Count")
 ```
 
 ![graf](graph.bmp)
+
+* Graphique en nuage de point
+
+
+```ipybn
+fig, ax = plt.subplots(1,2,figsize = (15,6))
+iris.plot(x="sepal_length", y = "sepal_width",kind="scatter",ax=ax[0],sharex=False, sharey=False,label="Sepal",color='r')
+iris.plot(x="petal_length", y = "petal_width",kind="scatter",ax=ax[1],sharex=False, sharey=False,label="Petal",color='b')
+```
+![point](point_1.bmp)
+
+* Graphique en nuage de point avec Interact
+
+
+```ipybn
+def plot(species):
+    data = iris[iris.species == species]
+    data.plot.scatter('sepal_length','sepal_width')
+    
+interact(plot, kind ='scatter', species='Iris-virginica')
+```
+
+![point](point_2.bmp)
 
 # Issu
 
