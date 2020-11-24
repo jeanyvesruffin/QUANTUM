@@ -518,7 +518,15 @@ iris.to_csv('saved_iris_df.csv', index = False)
 
 ## IDLE Python
 
+* Importer une librairie
 
+```cmd
+pip install pandas
+```
+Execution d'un fichier .py a travers IDLe
+
+ 
+![IDLE](IDLE.bmp)
 
 # Issu
 
