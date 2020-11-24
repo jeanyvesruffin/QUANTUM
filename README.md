@@ -507,6 +507,19 @@ interact(plot, kind ='scatter', species='Iris-virginica')
 
 ![point](point_2.bmp)
 
+
+* Faire une sauvegarde du fichier csv
+
+```ipybn
+iris.to_csv('saved_iris_df.csv', index = False)
+```
+
+# Utilisation de Python avec un autre IDE
+
+## IDLE Python
+
+
+
 # Issu
 
 [ERROR conda.core.link:_execute(698): ipykernel](https://www.heathmills.net/anaconda-upgrade-issues/)
