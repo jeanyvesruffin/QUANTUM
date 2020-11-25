@@ -528,6 +528,98 @@ Execution d'un fichier .py a travers IDLe
  
 ![IDLE](IDLE.bmp)
 
+## Executer et debug un code Python dans Eclipse.
+
+1 . Cliquer dans Eclipse>Help>Install new software puis taper http://www.pydev.org/updates et telecharger les packages.
+
+2 . Perspective>Open Prespective>Other...PyDev
+
+3 . Creer un nouveau projet pyDev project, cliquer sur Please configure an interpreter before proceeding et selectionner par exemple python 3.8.
+
+4 . Configurer enfin vos package (numpy, matplotlib ...) dans windows>preferences>Python interpreter
+
+5 . Execute with python pour executer votre programme.
+
+![eclipse](pyOnEclipse.bmp)
+
+# Travail avec Python dans le Cloud
+
+(notebook_azure)[http://notebooks.azure.com]
+(notebook_GCP)[http://console.cloud.google.com]
+
+Installer l'API Computer Engine API google + Cloud source repositories API.
+
+Cliquer sur activate cloud shell puis indiquer dans la console: gcloud config set project [IC account]
+
+Puis indiquer 
+
+```cmd
+$ export PS1="\[\e[34m\]\w\[\e[m\]>-->"
+
+-->sudo gcloud components update
+-->gcloud components install datalab
+-->datalab create python-datalab
+```
+
+Changer de port et y indiquer celui retourne par Google.
+
+(notebook_AWS)[http://aws.amazon.com/console/]
+
+Amazon SageMaker
+
+Creer a new role dans la section Permissions ans encryption IAM role, selectionner none et create role.
+
+Apres avoir crer un projet anaconda/python2 par exemple. Il est necessaire de mettre quelques lignes de codes afin d'etre authentifie par AWSs
+
+```py
+import os
+import sagemaker
+from sagemaker import get_execution_role
+
+sagemaker_session =sagemaker_Session()
+role=get_execution_role()
+role
+region = sagemaker_session.boto_session.region_name
+region
+
+# Importation de data disponible dans AWS
+
+training_data_uri= 's3://sagemaker-sample-data-{}/tensorflow/mnist'.format(region)
+
+get_ipython().system('aws --region {region} s3 \ cp s3://sagemaker-sample-data-{region}/tensorflow/mnist/train_data.npy train_data.npy')
+
+get_ipython().system('aws --region {region} s3 \ cp s3://sagemaker-sample-data-{region}/tensorflow/mnist/train_labels.npy train_labels.npy')
+
+```
+
+Puis
+
+```py
+train_data = np.load('train_data.npy')
+train_labels = np.load('train_labels.npy')
+train_data.shape
+#(5500, 78)
+```
+
+Utilisation
+
+
+```py
+%matplotlib inline
+
+plt.rcParams["figure.figsize"] = (2,10)
+
+for i in range(0,10):
+	img= train_data[i]
+	label = train_labels[i]
+	img_reshape = img.reshape((-28,28))
+	imgplot = plt.imshow(img_reshape, cmap='Oranges')
+	print('This is a {}'.format(label))
+	plt.show()
+```
+
+
+
 # Issu
 
 [ERROR conda.core.link:_execute(698): ipykernel](https://www.heathmills.net/anaconda-upgrade-issues/)
